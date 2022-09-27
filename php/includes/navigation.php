@@ -31,12 +31,12 @@
                             </button>
                             <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                                 <ul class="navbar-nav">
-                                    <li><a class="nav-link active" href="index.php">Home</a></li>
-                                    <li><a class="nav-link" href="about.php">About</a></li>
-                                    <li><a class="nav-link" href="exchange.php">Exchange</a></li>
-                                    <li><a class="nav-link" href="services.php">Services</a></li>
-                                    <li><a class="nav-link" href="news.php">News</a></li>
-                                    <li><a class="nav-link" href="contact.php">Contact</a></li>
+                                    <li><a class="nav-link <?php echo (str_ends_with($_SERVER['PHP_SELF'], 'index.php')  ? ' active' : '');?>" href="./index.php">Home</a></li>
+                                    <li><a class="nav-link <?php echo (str_ends_with($_SERVER['PHP_SELF'], 'about.php')  ? ' active' : '');?>" href="./about.php">About</a></li>
+                                    <li><a class="nav-link <?php echo (str_ends_with($_SERVER['PHP_SELF'], 'exchange.php')  ? ' active' : '');?>" href="./exchange.php">Exchange</a></li>
+                                    <li><a class="nav-link <?php echo (str_ends_with($_SERVER['PHP_SELF'], 'services.php')  ? ' active' : '');?>" href="./services.php">Services</a></li>
+                                    <li><a class="nav-link <?php echo (str_ends_with($_SERVER['PHP_SELF'], 'news.php')  ? ' active' : '');?>" href="./news.php">News</a></li>
+                                    <li><a class="nav-link <?php echo (str_ends_with($_SERVER['PHP_SELF'], 'contact.php')  ? ' active' : '');?>" href="./contact.php">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
