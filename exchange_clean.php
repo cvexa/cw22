@@ -51,42 +51,24 @@ include('php/includes/dbOperations.php');
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                     </div>
                     <div class="full paddding_left_15">
-                        <?php
-                            if(isset($_GET['msg'])){
-                                echo "<p class='text-center'>".$_GET['msg']."</p>";
-                            }
-                            $db = new DBOperations();
-                            $currencies = $db->getAllCurrencies();
-                        ?>
                         <form method="post" class="col-12" action="./php/exchange.php" id="exchange-from" style="gap:20px">
                             <select name="from" id="from" class="col-12 mt-2">
-                                <?php foreach($currencies as $currency){ ?>
-                                    <option value="<?= $currency['short_code']; ?>"
-                                        <?= isset($_GET['data']['from']) && $_GET['data']['from'] == $currency['short_code']? 'selected': ''?>
-                                    >
-                                        <?= $currency['short_code']; ?> / <?= $currency['description']; ?>
-                                    </option>
-                                <?php }; ?>
+                                <option value=""></option>
                             </select>
                             <select name="to" id="to" class="col-12 mt-2">
-                                <?php foreach($currencies as $currency){ ?>
-                                    <option value="<?= $currency['short_code']; ?>"
-                                        <?= isset($_GET['data']['to']) && $_GET['data']['to'] == $currency['short_code']? 'selected': ''?>
-                                    >
-                                        <?= $currency['short_code']; ?> / <?= $currency['description']; ?>
-                                    </option>
-                                <?php }; ?>
+                                <option value=""></option>
                             </select>
                             <input type="number" class="col-12 mt-2" name="amount" placeholder="количество" value="<?= $_GET['data']['amount'] ?? '' ?>">
                             <button class="btn btn-success col-4 mt-2" style="margin-left:10rem" type="submit">Обмени</button>
                         </form>
                         <?php if(isset($_GET['converted'])) {
-                            echo '<div class="converted_data mt-2 text-center" style="background-color: #95ffa8">Рейт: '
-                                . $_GET['converted']['rate'] .
-                                '<br/>количество: '
-                                . $_GET['converted']['amount'] .
-                                '<br/>Резултат: '
-                                . $_GET['converted']['result'] .
+                            echo '<div class="converted_data mt-2 text-center" style="background-color: #95ffa8">
+                                     рейт: '
+                                    . $_GET['converted']['rate'] .
+                                    '<br/>количество: '
+                                    . $_GET['converted']['amount'] .
+                                    '<br/>резултат: '
+                                    . $_GET['converted']['result'] .
                                 '</div>';
                         } ?>
                     </div>

@@ -1,6 +1,6 @@
 <?php
 
-class DBConnect
+class DBOperations
 {
     private mysqli|null|false $conn;
 
